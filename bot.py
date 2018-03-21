@@ -23,18 +23,18 @@ FILE_HEADING = ('coin', 'date', 'min_ask_price_ice', 'max_bid_price_bitstamp', '
                 'response_sell', 'fund_sell_usd', 'bitstamp_order_id')
 
 
-def currency_exchange_rate():
+def currency_exchange_rate():       # currency exchange rate from https://1forge.com/forex-data-api Zar to Usd
     res = requests.get('https://forex.1forge.com/1.0.3/quotes?pairs=ZARUSD&api_key=THMvdfzLLoxEa3GVIb2mKBhvD8vaP3Mx')
     return (json.loads(res.text)[0])['price']
 
 
-def currency_conversion(rate, price_zar):
+def currency_conversion(rate, price_zar): # change min ask price of ice from Zar to Usd
     for coin in CURRENCIES:
         price_zar[coin] = float(price_zar[coin]) * float(rate)
     return price_zar
 
 
-def createHTMLtable(table_heading, heading, data):
+def createHTMLtable(table_heading, heading, data):      # create HTML table for email
     htmltable = '<table border="1"><caption><b><u><font size=3>' + str(table_heading) + '</font></b></u></caption>'
     # Append Table Heading
     text = '<tr style = "background-color:rgb(221, 136, 151)">'
@@ -51,7 +51,7 @@ def createHTMLtable(table_heading, heading, data):
     return htmltable
 
 
-def sendEmail(email_sub, email_body_text, email_body, email_text_end, attachments=[]):
+def sendEmail(email_sub, email_body_text, email_body, email_text_end, attachments=[]):      # send email
     msg = MIMEMultipart()
     msg['Subject'] = email_sub
     msg['From'] = EMAIL_FROM
@@ -86,7 +86,7 @@ def sendEmail(email_sub, email_body_text, email_body, email_text_end, attachment
     s.quit()
 
 
-def variance(val1, val2):
+def variance(val1, val2):           # calculate variance of two values
     val1 = float(val1)
     val2 = float(val2)
     mean = (val1 + val2) / 2
@@ -96,7 +96,7 @@ def variance(val1, val2):
     return variance
 
 
-def strategy(coin, coin_data, bitstamp, ice):
+def strategy(coin, coin_data, bitstamp, ice):       # implementing strategy
     error_msg = ''
     coin_data['variance'] = variance(coin_data['min_ask_price_usd'], coin_data['max_bid_price_bitstamp'])
     coin_data['date'] = datetime.datetime.now()
@@ -141,7 +141,7 @@ def strategy(coin, coin_data, bitstamp, ice):
     return coin_data
 
 
-def summary_into_file(bot_summary):
+def summary_into_file(bot_summary):     # append summary to trade_report.csv file
     record_fl = open('trade_record.csv', 'a')
     file_writer = csv.writer(record_fl, delimiter=',', quotechar='', quoting=csv.QUOTE_ALL)
     for coin in bot_summary:

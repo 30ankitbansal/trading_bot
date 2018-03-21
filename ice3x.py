@@ -31,7 +31,7 @@ class Ice3x(object):
     def _format_log(self, string, level):
         return '{} {}: {}'.format(level, datetime.datetime.now(), string)
 
-    def min_ask_price_ice(self):
+    def min_ask_price_ice(self):        # return min ask price of asked coins
         min_ask_price_ice = {}
         currency_pair_id = {}
         response = requests.get(self.BASE_URL + 'stats/marketdepthbtcav').text
@@ -44,7 +44,7 @@ class Ice3x(object):
             self.logger.info(self._format_log(response, 'INFO'))
             return min_ask_price_ice, currency_pair_id
 
-    def place_order(self, pair_id, amount, type, price):
+    def place_order(self, pair_id, amount, type, price):  # place a order
         nonce = str(int(time.time()) * 1e6)
         uri = 'order/new'
         post_data = {'nonce' : nonce,

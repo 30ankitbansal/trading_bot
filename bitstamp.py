@@ -33,7 +33,7 @@ class Bitstamp(object):
     def _format_log(self, string, level):
         return "{} {}: {}".format(level, datetime.datetime.now(), string)
 
-    def max_bid_price_bitstamp(self):
+    def max_bid_price_bitstamp(self):       # return max bid price and last price (current) for said coins
         max_bid_price_bitstamp = {}
         price_bitstamp = {}
         response_log = ''
@@ -49,11 +49,12 @@ class Bitstamp(object):
                     found = True
                     response_log = response_log + response
                 except Exception as e:
+                    self.logger.info(self._format_log(e, "ERROR"))
                     pass
         self.logger.info(self._format_log(response_log, "INFO"))
         return max_bid_price_bitstamp, price_bitstamp
 
-    def max_bid_amount(self, coin):
+    def max_bid_amount(self, coin):     # return max bid order amount from order book
         response = requests.get(self.BASE_URL + 'order_book/' + str(coin).lower() + 'usd/')
         response = json.loads(response.text)['bids']
         MaxBidAmount = response[0][1]
@@ -63,7 +64,7 @@ class Bitstamp(object):
         self.logger.info(self._format_log(response, "INFO"))
         return MaxBidAmount
 
-    def send_bets(self, **params):
+    def send_bets(self, **params):          # place order
         if self.key and self.secret:
             nonce = str(int(time.time() * 1e6))
             message = nonce + self.client_id + self.key
@@ -81,7 +82,7 @@ class Bitstamp(object):
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 
-    def get_balance(self, coin):
+    def get_balance(self, coin):        # return wallet balance for particular coin
         params = {}
         if self.key and self.secret:
             nonce = str(int(time.time() * 1e6))
