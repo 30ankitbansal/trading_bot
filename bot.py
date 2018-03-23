@@ -95,8 +95,8 @@ def variance(val1, val2):  # calculate variance of two values
     return variance
 
 
-def strategy(coin, coin_data, bitstamp,
-             ice):  # coin, (min_ask, max_bid, current_price, any much more), bitstamp object, ice object
+def strategy(coin, coin_data, bitstamp, ice):  # coin, (min_ask, max_bid, current_price, any much more),
+                                                        # bitstamp object, ice object
     error_msg = ''
     coin_data['variance'] = variance(coin_data['min_ask_price_usd'],
                                      coin_data['max_bid_price_bitstamp'])  # getting variance for every coin
@@ -170,6 +170,7 @@ def main():
     max_bid_price_bitstamp, price_bitstamp = bitstamp.max_bid_price_bitstamp()  # max bid price and current price in COIN/USD
 
     htmlcontent = []
+    print(min_ask_price_usd)
 
     exchange_rate = currency_exchange_rate()  # getting currency exchange rate from forex.1forge.com
     min_ask_price_usd = currency_conversion(exchange_rate,
