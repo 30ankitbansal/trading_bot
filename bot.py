@@ -148,7 +148,7 @@ def strategy(coin, coin_data, bitstamp, ice):  # coin, (min_ask, max_bid, curren
 
 def summary_into_file(bot_summary):  # append summary to trade_report.csv file
     record_fl = open('trade_record.csv', 'a')       # open csv file in append mode
-    file_writer = csv.writer(record_fl, delimiter=',', quotechar='', quoting=csv.QUOTE_ALL)
+    file_writer = csv.writer(record_fl, delimiter=',')
     for coin in bot_summary:
         row = []
         for heading in FILE_HEADING:
