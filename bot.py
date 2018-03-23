@@ -33,8 +33,6 @@ def currency_exchange_rate():  # currency exchange rate from https://1forge.com/
 
 def currency_conversion(rate, price_zar):  # change min ask price of ice from Zar to Usd
     for coin in CURRENCIES:
-        print(price_zar[coin])
-        print(type(price_zar[coin]))
         price_zar[coin] = float(price_zar[coin]) * float(rate)
     return price_zar
 
@@ -170,9 +168,7 @@ def main():
     max_bid_price_bitstamp, price_bitstamp = bitstamp.max_bid_price_bitstamp()  # max bid price and current price in COIN/USD
 
     htmlcontent = []
-    print(min_ask_price_ice)
-    print(type(min_ask_price_ice))
-
+    
     exchange_rate = currency_exchange_rate()  # getting currency exchange rate from forex.1forge.com
     min_ask_price_usd = currency_conversion(exchange_rate,
                                             min_ask_price_ice)  # converting min ask price from COIN/ZAR TO COIN/USD'

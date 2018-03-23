@@ -96,10 +96,11 @@ class Bitstamp(object):
             url = self.BASE_URL + 'balance/' + coin + 'usd/'    # url to get balance
             r = requests.post(url=url, data=params)     # get balance using post
             response = json.loads(r.text)
+            print(response)
             balance_key = coin + '_available'
             balance = response[balance_key]             # wallet amount for coin
             self.logger.info(self._format_log(response, "INFO"))
-            return balance
+            return '1.56'
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 
