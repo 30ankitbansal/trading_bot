@@ -2,12 +2,9 @@
 import hashlib
 import hmac
 import json
-import datetime
 import logging
-import threading
 import time
 import datetime
-import calendar
 import requests
 import os.path
 dir = os.path.dirname(os.path.abspath(__file__)) + "/"
@@ -76,11 +73,11 @@ class Bitstamp(object):
             })
             url = self.BASE_URL + params['side'] + "/" + params['coin'] + 'usd/' # url to place order
             r = requests.post(url, data=params)     # placing order using post
-            print(r.text)
+            # print(r.text)
             response = json.loads(r.text)
-            print(response)
+            # print(response)
             self.logger.info(self._format_log(response, "INFO"))
-            return {'id': '1234524', 'status': 'success'}
+            return response
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 
@@ -98,11 +95,11 @@ class Bitstamp(object):
             url = self.BASE_URL + 'balance/' + coin + 'usd/'    # url to get balance
             r = requests.post(url=url, data=params)     # get balance using post
             response = json.loads(r.text)
-            print(response)
+            # print(response)
             balance_key = coin + '_available'
-            # balance = response[balance_key]             # wallet amount for coin
+            balance = response[balance_key]             # wallet amount for coin
             self.logger.info(self._format_log(response, "INFO"))
-            return '1.56'
+            return balance
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 

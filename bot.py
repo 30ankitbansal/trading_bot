@@ -172,7 +172,6 @@ def main():
     exchange_rate = currency_exchange_rate()  # getting currency exchange rate from forex.1forge.com
     min_ask_price_usd = currency_conversion(exchange_rate,
                                             min_ask_price_ice)  # converting min ask price from COIN/ZAR TO COIN/USD'
-
     for coin in CURRENCIES:  # Iterating over coins to implement the strategy
         coin_data = {'coin': coin, 'min_ask_price_ice': min_ask_price_ice[coin],
                      'max_bid_price_bitstamp': max_bid_price_bitstamp[coin],
@@ -187,18 +186,14 @@ def main():
         if coin_summary['error_msg'] == '':  # email only successful trades
             email_summary.append(coin_summary)
             # create html table storing summary
-            htmlcontent.append(createHTMLtable('Summary of successful orders', EMAIL_HEADING, email_summary))
-            email_sub = 'Trading Bot Report'
-            email_body_text = 'Hi All,\n\nPFB the summary of orders:'
-            email_body = htmlcontent
-            email_text_end = '\n\nRegards\nTrading Bot'
-            sendEmail(email_sub, email_body_text, email_body, email_text_end)
+    if len(email_summary) > 0:
+        htmlcontent.append(createHTMLtable('Summary of successful orders', EMAIL_HEADING, email_summary))
+        email_sub = 'Trading Bot Report'
+        email_body_text = 'Hi All,\n\nPFB the summary of orders:'
+        email_body = htmlcontent
+        email_text_end = '\n\nRegards\nTrading Bot'
+        sendEmail(email_sub, email_body_text, email_body, email_text_end)
 
 
 main()
 
-# email_sub = 'Trading Bot Report'
-# email_body_text = 'Hi All,\n\nPFB the summary of orders:'
-# email_body = []
-# email_text_end = '\n\nRegards\nTrading Bot'
-# sendEmail(email_sub, email_body_text, email_body, email_text_end)
