@@ -72,7 +72,7 @@ def sendEmail(email_sub, email_body_text, email_body, email_text_end):  # send e
     body = MIMEText(email_text_end) # email footer
     msg.attach(body)
 
-    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s = smtplib.SMTP('smtp.gmail.com', port=465)
     s.starttls()
     s.login(EMAIL_FROM, EMAIL_PASSWORD)     # login to send email
 
