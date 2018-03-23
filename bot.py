@@ -33,6 +33,8 @@ def currency_exchange_rate():  # currency exchange rate from https://1forge.com/
 
 def currency_conversion(rate, price_zar):  # change min ask price of ice from Zar to Usd
     for coin in CURRENCIES:
+        print(price_zar[coin])
+        print(type(price_zar[coin]))
         price_zar[coin] = float(price_zar[coin]) * float(rate)
     return price_zar
 
