@@ -137,7 +137,7 @@ def strategy(coin, coin_data, bitstamp, ice):  # coin, (min_ask, max_bid, curren
                 else:
                     error_msg = error_msg + ' Unable to place sell order on BITSTAMP. ' + response_sell['reason']
             else:
-                error_msg = error_msg + ' Unable to place buy order on ICE. ' + response_buy['error']
+                error_msg = error_msg + ' Unable to place buy order on ICE. ' + response_buy['reason']
         else:
             error_msg = error_msg + ' Wallet amount is less than $30'
     else:

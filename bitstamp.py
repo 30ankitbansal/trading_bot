@@ -76,9 +76,11 @@ class Bitstamp(object):
             })
             url = self.BASE_URL + params['side'] + "/" + params['coin'] + 'usd/' # url to place order
             r = requests.post(url, data=params)     # placing order using post
+            print(r.text)
             response = json.loads(r.text)
+            print(response)
             self.logger.info(self._format_log(response, "INFO"))
-            return response
+            return {'id': '1234524', 'status': 'success'}
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 
