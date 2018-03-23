@@ -52,6 +52,7 @@ class Ice3x(object):
                     min_ask_price_ice[str(data['pair_name']).split('/')[0]] = data['min_ask']       # min ask price
                     currency_pair_id[str(data['pair_name']).split('/')[0]] = data['pair_id']        # currency pair id for every coin will be used in buy order.
             self.logger.info(self._format_log(result, 'INFO'))
+            print(min_ask_price_ice)
             return min_ask_price_ice, currency_pair_id
 
     def place_order(self, pair_id, amount, type, price):  # place a order
