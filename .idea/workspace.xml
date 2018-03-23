@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa0bd70-ee13-4829-ac82-bac22e6f20de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.py" afterPath="$PROJECT_DIR$/bot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ice3x.py" afterPath="$PROJECT_DIR$/ice3x.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="394">
@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ice3x.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ice3x.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ice3x.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="25" />
+            <state relative-caret-position="366">
+              <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -95,11 +95,11 @@
         <option value="$PROJECT_DIR$/tradingbot/ice3x.py" />
         <option value="$PROJECT_DIR$/tradingbot/bitstamp.py" />
         <option value="$PROJECT_DIR$/tradingbot/bot.py" />
-        <option value="$PROJECT_DIR$/ice3x.py" />
         <option value="$PROJECT_DIR$/bitstamp.py" />
         <option value="$PROJECT_DIR$/READme" />
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/bot.py" />
+        <option value="$PROJECT_DIR$/ice3x.py" />
       </list>
     </option>
   </component>
@@ -454,14 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ice3x.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/READme">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1">
@@ -487,6 +479,14 @@
             <element signature="e#1653#2299#0" expanded="false" />
             <element signature="e#3555#7027#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ice3x.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

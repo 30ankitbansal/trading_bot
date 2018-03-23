@@ -36,16 +36,17 @@ class Ice3x(object):
         currency_pair_id = {}
         response = requests.get(self.BASE_URL + 'stats/marketdepthbtcav').text      # This method provides info about
                                                         # currency pair, for a certain period of time (24h by default):
-
+        print(response.text)
         # Note: Value of params last_price, min_ask and max_bid don’t depend on chosen period of time
         # (date_from, date_to) and always provides info for current time.
         result = json.loads(response)
+        print(result)
         if result['errors'] == 'false' or result['errors'] == False:        # for successful response getting min ask price for every coin
             for data in result['response']['entities']:
                 if str(data['pair_name']).split('/')[1] == 'zar' and str(data['pair_name']).split('/')[0] in self.coins:
                     min_ask_price_ice[str(data['pair_name']).split('/')[0]] = data['min_ask']       # min ask price
                     currency_pair_id[str(data['pair_name']).split('/')[0]] = data['pair_id']        # currency pair id for every coin will be used in buy order.
-            self.logger.info(self._format_log(response, 'INFO'))
+            self.logger.info(self._format_log(result, 'INFO'))
             return min_ask_price_ice, currency_pair_id
 
     def place_order(self, pair_id, amount, type, price):  # place a order
