@@ -119,7 +119,7 @@ def strategy(coin, coin_data, bitstamp, ice):  # coin, (min_ask, max_bid, curren
                                            pair_id=coin_data['currency_pair_id'])
             coin_data['response_buy'] = response_buy
             # only continue strategy if buy on ice placed successfully
-            if response_buy['errors'] == 'false':
+            if response_buy['errors'] == 'false' or response_buy['errors'] == False:
                 fund_buy_usd = CoinAmount * coin_data['min_ask_price_usd']  # fund used in USD used in placing buy order
                 coin_data['fund_buy_usd'] = fund_buy_usd
                 coin_data['ice_order_id'] = response_buy['response']['entity']['order_id']  # order_id of successful buy order
