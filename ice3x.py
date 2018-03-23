@@ -43,6 +43,11 @@ class Ice3x(object):
         print(result)
         if result['errors'] == 'false' or result['errors'] == False:        # for successful response getting min ask price for every coin
             for data in result['response']['entities']:
+                print(result['response']['entities'])
+                print(data)
+                currency_pair = str(data['pair_name']).split('/')
+                print(currency_pair)
+                print(type(currency_pair))
                 if str(data['pair_name']).split('/')[1] == 'zar' and str(data['pair_name']).split('/')[0] in self.coins:
                     min_ask_price_ice[str(data['pair_name']).split('/')[0]] = data['min_ask']       # min ask price
                     currency_pair_id[str(data['pair_name']).split('/')[0]] = data['pair_id']        # currency pair id for every coin will be used in buy order.
