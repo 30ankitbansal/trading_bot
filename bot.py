@@ -72,7 +72,7 @@ def sendEmail(email_sub, email_body_text, email_body, email_text_end):  # send e
     body = MIMEText(email_text_end) # email footer
     msg.attach(body)
 
-    s = smtplib.SMTP('smtp.gmail.com')
+    s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
     s.login(EMAIL_FROM, EMAIL_PASSWORD)     # login to send email
 
@@ -196,3 +196,9 @@ def main():
 
 
 main()
+
+# email_sub = 'Trading Bot Report'
+# email_body_text = 'Hi All,\n\nPFB the summary of orders:'
+# email_body = []
+# email_text_end = '\n\nRegards\nTrading Bot'
+# sendEmail(email_sub, email_body_text, email_body, email_text_end)
