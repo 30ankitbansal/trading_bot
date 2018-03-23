@@ -98,7 +98,7 @@ class Bitstamp(object):
             response = json.loads(r.text)
             print(response)
             balance_key = coin + '_available'
-            balance = response[balance_key]             # wallet amount for coin
+            # balance = response[balance_key]             # wallet amount for coin
             self.logger.info(self._format_log(response, "INFO"))
             return '1.56'
         else:
