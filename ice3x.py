@@ -67,5 +67,5 @@ class Ice3x(object):
         r = requests.post(self.BASE_URL + uri, data=post_data, headers=headers)  # placing order on ice3x exchange
         response = json.loads(r.text)
         self.logger.info(self._format_log(response, 'INFO'))
-        response = {'errors': False, 'response': {'entity': {'order_id': '2011″, 'transaction_id':'6517″}}}
+        response = {'errors': False, 'response': {'entity': {'order_id': '2011', 'transaction_id': '6517'}}}
         return response
