@@ -48,7 +48,7 @@ class Ice3x(object):
                 currency_pair = str(data['pair_name']).split('/')
                 print(currency_pair[1])
                 print(type(currency_pair[1]))
-                if currency_pair[1] == 'zar' and str(currency_pair[0]).upper() in self.coins:
+                if currency_pair[1] == 'zar' and str(currency_pair[0]) in self.coins:
                     print(11111111111111)
                     print(currency_pair)
                     min_ask_price_ice[currency_pair[0]] = data['min_ask']       # min ask price

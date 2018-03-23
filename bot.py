@@ -13,7 +13,7 @@ import time
 from settings import *
 
 # coins to implement the strategy on
-CURRENCIES = ['BTC', 'LTC', 'ETH', 'BCH']
+CURRENCIES = ['btc', 'ltc', 'eth', 'bch']
 
 # heading for summary table to send in email
 EMAIL_HEADING = ('coin', 'date', 'min_ask_price_ice', 'max_bid_price_bitstamp', 'coin_amount', 'fund_buy_usd',
