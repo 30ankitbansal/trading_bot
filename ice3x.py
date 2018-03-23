@@ -36,7 +36,7 @@ class Ice3x(object):
         currency_pair_id = {}
         response = requests.get(self.BASE_URL + 'stats/marketdepthbtcav').text      # This method provides info about
                                                         # currency pair, for a certain period of time (24h by default):
-        print(response.text)
+        print(response)
         # Note: Value of params last_price, min_ask and max_bid don’t depend on chosen period of time
         # (date_from, date_to) and always provides info for current time.
         result = json.loads(response)
