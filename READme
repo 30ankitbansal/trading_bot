@@ -1,0 +1,87 @@
+
+Insert your Api keys and secrets in settings.py
+
+Add your Email_Id (along with password) to send and receive emails
+
+
+ICE3X Exchange:
+
+https://ice3x.com/api/v1/stats/marketdepthbtcav
+
+    This method provides info about currebcy pair, for a certain period of time (24h by default):
+
+    Name of currency pair (pair_name) as well as it id (pair_id)
+    Current lowest ask (min_ask) and highest bid (max_bid)
+    Trading volume of the last 24 hours (vol)
+    The price at which the last order executed (last_price)
+
+    Note: Value of params last_price, min_ask and max_bid don’t depend on chosen period of time (date_from, date_to) and
+    always provides info for current time.
+
+    And return response data in ZAR. min_ask, last-price price in BTC/USD
+
+
+https://ice3x.com/api/v1/order/new
+
+    The method creates a new order by the following parameters:
+
+    Currency pair id (pair_id)
+    Transaction type (type) – buy / sell
+    The volume of transactions (amount)
+    The price of the buy / sell
+    And returns the following information about created order:
+    Order id (order_id)
+    Transaction id (transaction_id)
+
+
+BITSTAMP Exchange:
+
+https://www.bitstamp.net/api/v2/ticker/btcusd/
+
+    Response (JSON)
+    last	Last BTC price.
+    high	Last 24 hours price high.
+    low	Last 24 hours price low.
+    vwap	Last 24 hours volume weighted average price.
+    volume	Last 24 hours volume.
+    bid	Highest buy order.
+    ask	Lowest sell order.
+    timestamp	Unix timestamp date and time.
+    open	First price of the day.
+
+
+https://www.bitstamp.net/api/v2/order_book/btcusd/
+
+    Returns a JSON dictionary with "bids" and "asks". Each is a list of open orders and each
+    order is represented as a list holding the price and the amount.
+
+
+https://www.bitstamp.net/api/v2/sell/btcusd/
+
+    This call will be executed on the account (Sub or Main), to which the used API key is bound to.
+
+
+https://www.bitstamp.net/api/v2/balance/btcusd/
+
+    Returns the values relevant to the specified currency_pair parameter.
+    Supported values for currency_pair: btcusd, ltcusd, ethusd, bchusd
+
+
+https://forex.1forge.com/1.0.3/quotes?pairs=ZARUSD&api_key=THMvdfzLLoxEa3GVIb2mKBhvD8vaP3Mx
+
+    REST Rate Limiting
+    1,000 requests per day
+
+    Update frequency
+    100 updates per second!
+
+    Response
+    [
+      {
+        "symbol": "ZARUSD",
+        "price": 0.0854951,
+        "bid": 0.0854818,
+        "ask": 0.0855085,
+        "timestamp": 1521829057
+      }
+    ]

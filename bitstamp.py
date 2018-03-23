@@ -25,29 +25,29 @@ class Bitstamp(object):
         self._init_logger()
         self.coins = coins
 
-    def _init_logger(self):
+    def _init_logger(self):         # initialize exchange logger
         self.logger.setLevel(logging.INFO)
         self.handler.setLevel(logging.INFO)
         self.logger.addHandler(self.handler)
 
-    def _format_log(self, string, level):
+    def _format_log(self, string, level):  # logging format
         return "{} {}: {}".format(level, datetime.datetime.now(), string)
 
     def max_bid_price_bitstamp(self):       # return max bid price and last price (current) for said coins
         max_bid_price_bitstamp = {}
         price_bitstamp = {}
         response_log = ''
-        for coin in self.coins:
+        for coin in self.coins:  # get min ask price for every coin
             found = False
-            while not found:
+            while not found:     # calling api until we get the max bid price for every coin we required.
                 try:
                     response = requests.get(self.BASE_URL + 'ticker/' + str(coin) + 'USD',
                                             headers={'User-Agent': 'Mozilla/5.0'}).text
                     response = json.loads(response)
-                    max_bid_price_bitstamp[str(coin)] = response['bid']
-                    price_bitstamp[str(coin)] = response['last']
+                    max_bid_price_bitstamp[str(coin)] = response['bid']  # max bid price
+                    price_bitstamp[str(coin)] = response['last']         # last price
                     found = True
-                    response_log = response_log + response
+                    response_log = response_log + response      # log response for every api hit
                 except Exception as e:
                     self.logger.info(self._format_log(e, "ERROR"))
                     pass
@@ -55,11 +55,11 @@ class Bitstamp(object):
         return max_bid_price_bitstamp, price_bitstamp
 
     def max_bid_amount(self, coin):     # return max bid order amount from order book
-        response = requests.get(self.BASE_URL + 'order_book/' + str(coin).lower() + 'usd/')
+        response = requests.get(self.BASE_URL + 'order_book/' + str(coin).lower() + 'usd/')     # getting orderbook from bitstamp
         response = json.loads(response.text)['bids']
         MaxBidAmount = response[0][1]
         for data in response:
-            if data[1] > MaxBidAmount:
+            if data[1] > MaxBidAmount:      # checking for max bid order
                 MaxBidAmount = data[1]
         self.logger.info(self._format_log(response, "INFO"))
         return MaxBidAmount
@@ -68,36 +68,36 @@ class Bitstamp(object):
         if self.key and self.secret:
             nonce = str(int(time.time() * 1e6))
             message = nonce + self.client_id + self.key
-            signature = hmac.new(
+            signature = hmac.new(           # creating signature for authentication
                 self.secret.encode('utf-8'), msg=message.encode('utf-8'), digestmod=hashlib.sha256)
             signature = signature.hexdigest().upper()
             params.update({
                 'key': self.key, 'signature': signature, 'nonce': nonce
             })
-            url = self.BASE_URL + params['side'] + "/" + params['coin'] + 'usd/'
-            r = requests.post(url, data=params)
+            url = self.BASE_URL + params['side'] + "/" + params['coin'] + 'usd/' # url to place order
+            r = requests.post(url, data=params)     # placing order using post
             response = json.loads(r.text)
             self.logger.info(self._format_log(response, "INFO"))
             return response
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 
-    def get_balance(self, coin):        # return wallet balance for particular coin
+    def get_balance(self, coin):        # return walletamount for particular coin
         params = {}
-        if self.key and self.secret:
+        if self.key and self.secret:       # checking key and secret
             nonce = str(int(time.time() * 1e6))
             message = nonce + self.client_id + self.key
-            signature = hmac.new(
+            signature = hmac.new(           # creating signature for authentication
                 self.secret.encode('utf-8'), msg=message.encode('utf-8'), digestmod=hashlib.sha256)
             signature = signature.hexdigest().upper()
             params.update({
                 'key': self.key, 'signature': signature, 'nonce': nonce
             })
-            url = self.BASE_URL + 'balance/' + coin + 'usd/'
-            r = requests.post(url=url, data=params)
+            url = self.BASE_URL + 'balance/' + coin + 'usd/'    # url to get balance
+            r = requests.post(url=url, data=params)     # get balance using post
             response = json.loads(r.text)
             balance_key = coin + '_available'
-            balance = response[balance_key]
+            balance = response[balance_key]             # wallet amount for coin
             self.logger.info(self._format_log(response, "INFO"))
             return balance
         else:
