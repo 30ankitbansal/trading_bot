@@ -31,13 +31,12 @@ FILE_HEADING = ('coin', 'date', 'min_ask_price_ice', 'max_bid_price_bitstamp', '
 
 
 def _init_logger():                             # initialize exchange logger
-    logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger('BOT')
     handler = logging.FileHandler(dir + 'logs/bot.log')
+    logging.basicConfig(level=logging.INFO)
     handler.setLevel(logging.INFO)
     logger.setLevel(logging.INFO)
     logger.addHandler(handler)
-
     return logger
 
 
@@ -206,46 +205,45 @@ def main():
     bot_summary = []  # to store summary in csv.
     email_summary = []  # to email summary
 
-    # try:
-    ice = Ice3x(key=Ice_key, secret=Ice_secret, coins=CURRENCIES)
+    try:
+        ice = Ice3x(key=Ice_key, secret=Ice_secret, coins=CURRENCIES)
 
-    bitstamp = Bitstamp(key=Bitstamp_key, secret=Bitstamp_secret, client_id=Bitstamp_client_id, coins=CURRENCIES)
+        bitstamp = Bitstamp(key=Bitstamp_key, secret=Bitstamp_secret, client_id=Bitstamp_client_id, coins=CURRENCIES)
 
-    # print(bitstamp.get_balance('btc'))
-    min_ask_price_ice, currency_pair_id = ice.min_ask_price_ice()  # min ask price in COIN/ZAR and currency pair
-    max_bid_price_bitstamp, price_bitstamp = bitstamp.max_bid_price_bitstamp()  # max bid price and current price in COIN/USD
+        min_ask_price_ice, currency_pair_id = ice.min_ask_price_ice()  # min ask price in COIN/ZAR and currency pair
+        max_bid_price_bitstamp, price_bitstamp = bitstamp.max_bid_price_bitstamp()  # max bid price and current price in COIN/USD
 
-    htmlcontent = []
+        htmlcontent = []
 
-    exchange_rate = currency_exchange_rate()  # getting currency exchange rate from forex.1forge.com
-    min_ask_price_usd = currency_conversion(exchange_rate,
-                                            min_ask_price_ice)  # converting min ask price from COIN/ZAR TO COIN/USD'
-    balance_bitstamp = bitstamp.get_balance()
-    for coin in CURRENCIES:  # Iterating over coins to implement the strategy
-        coin_data = {'coin': coin, 'min_ask_price_ice': min_ask_price_ice[coin],
-                     'max_bid_price_bitstamp': max_bid_price_bitstamp[coin],
-                     'currency_pair_id': currency_pair_id[coin], 'price_bitstamp': price_bitstamp[coin],
-                     'min_ask_price_usd': min_ask_price_usd[coin], 'balance_bitstamp': balance_bitstamp[coin]}
-        print('Starting strategy for ' + coin.upper())
-        logger.info(_format_log(coin_data, "INFO"))
-        coin_summary = strategy(coin, coin_data, bitstamp, ice, logger)
+        exchange_rate = currency_exchange_rate()  # getting currency exchange rate from forex.1forge.com
+        min_ask_price_usd = currency_conversion(exchange_rate,
+                                                min_ask_price_ice)  # converting min ask price from COIN/ZAR TO COIN/USD'
+        balance_bitstamp = bitstamp.get_balance()
+        for coin in CURRENCIES:  # Iterating over coins to implement the strategy
+            coin_data = {'coin': coin, 'min_ask_price_ice': min_ask_price_ice[coin],
+                         'max_bid_price_bitstamp': max_bid_price_bitstamp[coin],
+                         'currency_pair_id': currency_pair_id[coin], 'price_bitstamp': price_bitstamp[coin],
+                         'min_ask_price_usd': min_ask_price_usd[coin], 'balance_bitstamp': balance_bitstamp[coin]}
+            print('Starting strategy for ' + coin.upper())
+            logger.info(_format_log(coin_data, "INFO"))
+            coin_summary = strategy(coin, coin_data, bitstamp, ice, logger)
 
-        bot_summary.append(coin_summary) # append summary to store in csv
+            bot_summary.append(coin_summary) # append summary to store in csv
 
-        summary_into_file(bot_summary)    # append summary to email
+            summary_into_file(bot_summary)    # append summary to email
 
-        if coin_summary['error_msg'] == '':  # email only successful trades
-            email_summary.append(coin_summary)
-            # create html table storing summary
-    if len(email_summary) > 0:
-        htmlcontent.append(createHTMLtable('Summary of successful orders', EMAIL_HEADING, email_summary))
-        email_sub = 'Trading Bot Report'
-        email_body_text = 'Hi All,\n\nPFB the summary of orders:'
-        email_body = htmlcontent
-        email_text_end = '\n\nRegards\nTrading Bot'
-        sendEmail(email_sub, email_body_text, email_body, email_text_end)
-    # except Exception as e:
-    #     logger.info(_format_log(e, "ERROR"))
+            if coin_summary['error_msg'] == '':  # email only successful trades
+                email_summary.append(coin_summary)
+                # create html table storing summary
+        if len(email_summary) > 0:
+            htmlcontent.append(createHTMLtable('Summary of successful orders', EMAIL_HEADING, email_summary))
+            email_sub = 'Trading Bot Report'
+            email_body_text = 'Hi All,\n\nPFB the summary of orders:'
+            email_body = htmlcontent
+            email_text_end = '\n\nRegards\nTrading Bot'
+            sendEmail(email_sub, email_body_text, email_body, email_text_end)
+    except Exception as e:
+        logger.info(_format_log(e, "ERROR"))
 
 
 main()
