@@ -107,7 +107,6 @@ class Bitstamp(object):
                 url = self.BASE_URL + 'balance/'                                                # url to get balance
                 r = requests.post(url=url, data=params)  # get balance using post
                 response = json.loads(r.text)
-                print(response)
                 for coin in self.coins:
                     balance_key = coin + '_available'           # wallet amount for coin
                     balance[coin] = response[balance_key]
