@@ -13,7 +13,7 @@ Ice_key = 'IYBV1EGYESOGEHACTSKQ0ERQIMEJ0DQBGEDPCTTSARDLWNRIEFVVFLOO5TDGAXHY'    
 Ice_secret = 'cyv4pnqqxvqhdp6minydzjpsdgcnlxuieckgi8pilkfnuxgsbuk89lbwq6s1alpe'                 # private key
 
 EMAIL_FROM = '30ankitbansal@gmail.com'                 # Email_id from which you want send email only GOOGLE account
-EMAIL_PASSWORD = 'digitalocean'             # GOOGLE account password
+EMAIL_PASSWORD = ''             # GOOGLE account password
 EMAIL_TO = ['30ankitbansal@gmail.com']                   # Email_id on which you want receive email
 EMAIL_CC = ['']                   # list of email_ids
 

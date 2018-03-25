@@ -41,7 +41,7 @@ def _init_logger():                             # initialize exchange logger
     return logger
 
 
-def _format_log(self, string, level):  # logging format
+def _format_log(string, level):  # logging format
         return "{} {}: {}".format(level, datetime.datetime.now(), string)
 
 
@@ -246,7 +246,6 @@ def main():
             sendEmail(email_sub, email_body_text, email_body, email_text_end)
     except Exception as e:
         logger.info(_format_log(e, "ERROR"))
-
 
 main()
 
