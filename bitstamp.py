@@ -84,6 +84,7 @@ class Bitstamp(object):
                 url = self.BASE_URL + params['side'] + "/" + params['coin'] + 'usd/' # url to place order
                 r = requests.post(url, data=params)     # placing order using post
                 response = json.loads(r.text)
+                print(response)
                 self.logger.info(self._format_log(response, "INFO"))
             except Exception as e:
                 self.logger.info(self._format_log(e, "ERROR"))

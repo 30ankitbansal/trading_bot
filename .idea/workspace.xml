@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa0bd70-ee13-4829-ac82-bac22e6f20de" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/bitstamp.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/ice3x.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bitstamp.py" afterPath="$PROJECT_DIR$/bitstamp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.py" afterPath="$PROJECT_DIR$/bot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ice3x.py" afterPath="$PROJECT_DIR$/ice3x.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,16 +15,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bot.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="158" column="38" lean-forward="false" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
+            <state relative-caret-position="289">
+              <caret line="192" column="26" lean-forward="true" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#2178#2824#0" expanded="false" />
                 <element signature="e#2916#3654#0" expanded="false" />
                 <element signature="e#3723#3916#0" expanded="false" />
+                <element signature="e#4088#8558#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -35,8 +34,8 @@
       <file leaf-file-name="bitstamp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitstamp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="73" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="73" />
+            <state relative-caret-position="480">
+              <caret line="86" column="30" lean-forward="false" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
               </folding>
@@ -44,17 +43,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ice3x.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ice3x.py">
+      <file leaf-file-name="bot.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logs/bot.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ice3x.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ice3x.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -88,11 +97,11 @@
       <find>EMAIL_CC</find>
       <find>“</find>
       <find>balance</find>
-      <find>print</find>
       <find>log</find>
-      <find>handler</find>
       <find>CoinAmount</find>
       <find>self</find>
+      <find>handler</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>self.BASE_URL</replace>
@@ -111,10 +120,10 @@
         <option value="$PROJECT_DIR$/tradingbot/bitstamp.py" />
         <option value="$PROJECT_DIR$/tradingbot/bot.py" />
         <option value="$PROJECT_DIR$/READme" />
-        <option value="$PROJECT_DIR$/ice3x.py" />
-        <option value="$PROJECT_DIR$/bitstamp.py" />
-        <option value="$PROJECT_DIR$/bot.py" />
         <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/bot.py" />
+        <option value="$PROJECT_DIR$/bitstamp.py" />
+        <option value="$PROJECT_DIR$/ice3x.py" />
       </list>
     </option>
   </component>
@@ -148,6 +157,11 @@
             <path>
               <item name="trading_bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="trading_bot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trading_bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trading_bot" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -345,6 +359,7 @@
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
             <element signature="e#3723#3916#0" expanded="false" />
+            <element signature="e#4088#8558#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -392,6 +407,7 @@
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
             <element signature="e#3723#3916#0" expanded="false" />
+            <element signature="e#4088#8558#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -431,6 +447,7 @@
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
             <element signature="e#3723#3916#0" expanded="false" />
+            <element signature="e#4088#8558#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -462,6 +479,7 @@
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
             <element signature="e#3723#3916#0" expanded="false" />
+            <element signature="e#4088#8558#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -493,42 +511,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ice3x.py">
+    <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/bot.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bitstamp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="73" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="73" />
+        <state relative-caret-position="480">
+          <caret line="86" column="30" lean-forward="false" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ice3x.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="158" column="38" lean-forward="false" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
+        <state relative-caret-position="289">
+          <caret line="192" column="26" lean-forward="true" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
             <element signature="e#3723#3916#0" expanded="false" />
+            <element signature="e#4088#8558#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
