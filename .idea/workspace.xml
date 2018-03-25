@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa0bd70-ee13-4829-ac82-bac22e6f20de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bitstamp.py" afterPath="$PROJECT_DIR$/bitstamp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.py" afterPath="$PROJECT_DIR$/bot.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,13 +16,14 @@
       <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="189" column="43" lean-forward="true" selection-start-line="189" selection-start-column="43" selection-end-line="189" selection-end-column="43" />
+            <state relative-caret-position="142">
+              <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#2178#2824#0" expanded="false" />
                 <element signature="e#2916#3654#0" expanded="false" />
-                <element signature="e#4088#8558#0" expanded="false" />
+                <element signature="e#4092#8562#0" expanded="false" />
+                <element signature="e#8648#9154#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -120,8 +120,8 @@
         <option value="$PROJECT_DIR$/READme" />
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/ice3x.py" />
-        <option value="$PROJECT_DIR$/bot.py" />
         <option value="$PROJECT_DIR$/bitstamp.py" />
+        <option value="$PROJECT_DIR$/bot.py" />
       </list>
     </option>
   </component>
@@ -356,7 +356,8 @@
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
-            <element signature="e#4088#8558#0" expanded="false" />
+            <element signature="e#4092#8562#0" expanded="false" />
+            <element signature="e#8648#9154#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -403,7 +404,8 @@
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
-            <element signature="e#4088#8558#0" expanded="false" />
+            <element signature="e#4092#8562#0" expanded="false" />
+            <element signature="e#8648#9154#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -442,7 +444,8 @@
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
-            <element signature="e#4088#8558#0" expanded="false" />
+            <element signature="e#4092#8562#0" expanded="false" />
+            <element signature="e#8648#9154#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -473,7 +476,8 @@
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
-            <element signature="e#4088#8558#0" expanded="false" />
+            <element signature="e#4092#8562#0" expanded="false" />
+            <element signature="e#8648#9154#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -541,13 +545,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="189" column="43" lean-forward="true" selection-start-line="189" selection-start-column="43" selection-end-line="189" selection-end-column="43" />
+        <state relative-caret-position="142">
+          <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2178#2824#0" expanded="false" />
             <element signature="e#2916#3654#0" expanded="false" />
-            <element signature="e#4088#8558#0" expanded="false" />
+            <element signature="e#4092#8562#0" expanded="false" />
+            <element signature="e#8648#9154#0" expanded="false" />
           </folding>
         </state>
       </provider>

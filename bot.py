@@ -108,7 +108,7 @@ def variance(val1, val2):  # calculate variance of two values
     mean = (val1 + val2) / 2
     val1_sqr = (val1 - mean) ** 2
     val2_sqr = (val2 - mean) ** 2
-    variance = val1_sqr + val2_sqr
+    variance = (val1_sqr + val2_sqr)/2
     return variance
 
 
