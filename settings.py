@@ -2,8 +2,8 @@
 # BITSTAMP account keys
 
 
-Bitstamp_key = 'WtoXTeix4LBUQkJAkeilYowmMUbfVK4r'              # public key
-Bitstamp_secret = 'lPu2EMyoV7gpKsuy1fRnxT1sAkfJVSS'            # private key
+Bitstamp_key = 'QQAQk3a7mgKO9dNvJkgzbzqcUiSil3IB'              # public key
+Bitstamp_secret = 'STT8JIHe7JZXDpXM7j7HRMMHeQgGSJCL'            # private key
 Bitstamp_client_id = 'gugo5564'                                # customer ID
 
 
