@@ -49,12 +49,11 @@ class Bitstamp(object):
                         found = True
                         response_log = response_log + response      # log response for every api hit
                     except Exception as e:
-                        self.logger.info(self._format_log(e, "ERROR"))
                         pass
             self.logger.info(self._format_log(response_log, "INFO"))
+            return max_bid_price_bitstamp, price_bitstamp
         except Exception as e:
             self.logger.info(self._format_log(e, "ERROR"))
-        return max_bid_price_bitstamp, price_bitstamp
 
     def max_bid_amount(self, coin):     # return max bid order amount from order book
         try:
@@ -68,7 +67,6 @@ class Bitstamp(object):
             return MaxBidAmount
         except Exception as e:
             self.logger.info(self._format_log(e, "ERROR"))
-        return {}
 
     def send_bets(self, **params):          # place order
         if self.key and self.secret:
@@ -85,9 +83,10 @@ class Bitstamp(object):
                 r = requests.post(url, data=params)     # placing order using post
                 response = json.loads(r.text)
                 self.logger.info(self._format_log(response, "INFO"))
+                print(response)
+                return response
             except Exception as e:
                 self.logger.info(self._format_log(e, "ERROR"))
-            return {}
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 

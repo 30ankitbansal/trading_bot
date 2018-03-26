@@ -122,66 +122,68 @@ def strategy(coin, coin_data, bitstamp, ice, logger):  # coin, (min_ask, max_bid
         coin_data['date'] = datetime.datetime.now()         # storing date time for current trade
 
         print('Checking Variance for ' + coin + ' Variance is ' + str(coin_data['variance']))
-        if coin_data['variance'] > -2:                      # if variance meets our requirements proceed for trading
+        # if coin_data['variance'] > -2:                      # if variance meets our requirements proceed for trading
 
-            wallet_Amount = float(coin_data['balance_bitstamp'])    # amount of the coin that is in the Bitstamp wallet
-            coin_data['balance_bitstamp'] = wallet_Amount
-            # Only continue if the value of wallet_amount of the coin is higher than $30
-            if wallet_Amount * float(coin_data['price_bitstamp']) > 30:     # value of wallet amount in USD = wallet amount * lastprice in COIN/USD from bitstamp
+        wallet_Amount = float(coin_data['balance_bitstamp'])    # amount of the coin that is in the Bitstamp wallet
+        coin_data['balance_bitstamp'] = wallet_Amount
+        # Only continue if the value of wallet_amount of the coin is higher than $30
+        if wallet_Amount * float(coin_data['price_bitstamp']) > 30:     # value of wallet amount in USD = wallet amount * lastprice in COIN/USD from bitstamp
 
-                MaxBidAmount = float(bitstamp.max_bid_amount(coin_data['coin'])) # getting maxbidamount of coin from highest buy order on bitstamp
-                coin_data['max_bid_amount'] = MaxBidAmount
+            MaxBidAmount = float(bitstamp.max_bid_amount(coin_data['coin'])) # getting maxbidamount of coin from highest buy order on bitstamp
+            coin_data['max_bid_amount'] = MaxBidAmount
 
-                if MaxBidAmount > wallet_Amount:    # amount of coin to place order is the lowest from wallet_amount and maxbidamount
-                    CoinAmount = wallet_Amount
-                else:
-                    CoinAmount = MaxBidAmount
-                coin_data['coin_amount'] = CoinAmount
-
-                print('placing buy order on ICE for ' + str(coin) + ' of amount ' + str(CoinAmount) + ' at price ' +
-                      str(coin_data['min_ask_price_ice']))
-
-                # placing buy order on ice with min ask price and said coin amount.
-                response_buy = ice.place_order(amount=CoinAmount, price=coin_data['min_ask_price_ice'], type='buy',
-                                               pair_id=coin_data['currency_pair_id'])
-                coin_data['response_buy'] = response_buy
-                # only continue strategy if buy on ice placed successfully
-                if response_buy['errors'] == 'false' or response_buy['errors'] == False:
-
-                    print('Successfully placed buy order')
-
-                    fund_buy_usd = CoinAmount * coin_data['min_ask_price_usd']  # fund used in USD used in placing buy order
-                    coin_data['fund_buy_usd'] = fund_buy_usd
-                    coin_data['ice_order_id'] = response_buy['response']['entity']['order_id']  # order_id of successful buy order
-                    coin_data['ice_transaction_id'] = response_buy['response']['entity']['transaction_id']  # transaction_id of successful buy
-
-                    print('placing sell order on BITSTAMP for ' + str(coin) + ' of amount ' + str(CoinAmount) + ' at price '
-                          + str(coin_data['max_bid_price_bitstamp']))
-
-                    # placing sell order on bitstamp with max bid price and said coin amount.
-                    response_sell = bitstamp.send_bets(amount=CoinAmount, price=coin_data['max_bid_price_bitstamp'],
-                                                       coin=coin_data['coin'], side='sell')
-                    coin_data['response_sell'] = response_sell
-                    if response_sell['status'] == 'success':    # successful sell order on bitstamp
-
-                        print('Successfully placed sell order')
-
-                        fund_sell_usd = CoinAmount * float(coin_data['max_bid_price_bitstamp']) # fund used in USD used in placing sell order
-                        coin_data['fund_sell_usd'] = fund_sell_usd
-                        coin_data['bitstamp_order_id'] = response_sell['id']        # order_id of successful sell order
-                        logger.info(_format_log(coin_data, "INFO"))
-
-                    else:
-                        error_msg = error_msg + ' Unable to place sell order on BITSTAMP. ' + response_sell['reason']
-                else:
-                    error_msg = error_msg + ' Unable to place buy order on ICE. ' + response_buy['reason']
+            if MaxBidAmount > wallet_Amount:    # amount of coin to place order is the lowest from wallet_amount and maxbidamount
+                CoinAmount = wallet_Amount
             else:
-                error_msg = error_msg + ' Wallet amount is less than $30'
+                CoinAmount = MaxBidAmount
+            coin_data['coin_amount'] = CoinAmount
+
+            print('placing buy order on ICE for ' + str(coin) + ' of amount ' + str(CoinAmount) + ' at price ' +
+                  str(coin_data['min_ask_price_ice']))
+
+            # placing buy order on ice with min ask price and said coin amount.
+            response_buy = ice.place_order(amount=CoinAmount, price=coin_data['min_ask_price_ice'], type='buy',
+                                           pair_id=coin_data['currency_pair_id'])
+            coin_data['response_buy'] = response_buy
+            # only continue strategy if buy on ice placed successfully
+            if response_buy['errors'] == 'false' or response_buy['errors'] == False:
+
+                print('Successfully placed buy order')
+
+                fund_buy_usd = CoinAmount * coin_data['min_ask_price_usd']  # fund used in USD used in placing buy order
+                coin_data['fund_buy_usd'] = fund_buy_usd
+                coin_data['ice_order_id'] = response_buy['response']['entity']['order_id']  # order_id of successful buy order
+                coin_data['ice_transaction_id'] = response_buy['response']['entity']['transaction_id']  # transaction_id of successful buy
+
+                print('placing sell order on BITSTAMP for ' + str(coin) + ' of amount ' + str(CoinAmount) + ' at price '
+                      + str(coin_data['max_bid_price_bitstamp']))
+
+                # placing sell order on bitstamp with max bid price and said coin amount.
+                response_sell = bitstamp.send_bets(amount=CoinAmount, price=coin_data['max_bid_price_bitstamp'],
+                                                   coin=coin_data['coin'], side='sell')
+                coin_data['response_sell'] = response_sell
+                if response_sell['status'] == 'success':    # successful sell order on bitstamp
+
+                    print('Successfully placed sell order')
+
+                    fund_sell_usd = CoinAmount * float(coin_data['max_bid_price_bitstamp']) # fund used in USD used in placing sell order
+                    coin_data['fund_sell_usd'] = fund_sell_usd
+                    coin_data['bitstamp_order_id'] = response_sell['id']        # order_id of successful sell order
+                    logger.info(_format_log(coin_data, "INFO"))
+
+                else:
+                    error_msg = error_msg + ' Unable to place sell order on BITSTAMP. ' + response_sell['reason']
+            else:
+                error_msg = error_msg + ' Unable to place buy order on ICE. ' + response_buy['reason']
         else:
-            error_msg = error_msg + ' variance is less than 2. '
+            error_msg = error_msg + ' Wallet amount is less than $30'
+        # else:
+        #     error_msg = error_msg + ' variance is less than 2. '
         coin_data['error_msg'] = error_msg
     except Exception as e:
         logger.info(_format_log(e, "ERROR"))
+        print(error_msg)
+        coin_data['error_msg'] = error_msg
     return coin_data
 
 
@@ -205,45 +207,44 @@ def main():
     bot_summary = []  # to store summary in csv.
     email_summary = []  # to email summary
 
-    try:
-        ice = Ice3x(key=Ice_key, secret=Ice_secret, coins=CURRENCIES)
+    # try:
+    ice = Ice3x(key=Ice_key, secret=Ice_secret, coins=CURRENCIES)
 
-        bitstamp = Bitstamp(key=Bitstamp_key, secret=Bitstamp_secret, client_id=Bitstamp_client_id, coins=CURRENCIES)
+    bitstamp = Bitstamp(key=Bitstamp_key, secret=Bitstamp_secret, client_id=Bitstamp_client_id, coins=CURRENCIES)
 
-        min_ask_price_ice, currency_pair_id = ice.min_ask_price_ice()  # min ask price in COIN/ZAR and currency pair
-        max_bid_price_bitstamp, price_bitstamp = bitstamp.max_bid_price_bitstamp()  # max bid price and current price in COIN/USD
+    min_ask_price_ice, currency_pair_id = ice.min_ask_price_ice()  # min ask price in COIN/ZAR and currency pair
+    max_bid_price_bitstamp, price_bitstamp = bitstamp.max_bid_price_bitstamp()  # max bid price and current price in COIN/USD
 
-        htmlcontent = []
+    htmlcontent = []
 
-        exchange_rate = currency_exchange_rate()  # getting currency exchange rate from forex.1forge.com
-        min_ask_price_usd = currency_conversion(exchange_rate,
-                                                min_ask_price_ice)  # converting min ask price from COIN/ZAR TO COIN/USD'
-        balance_bitstamp = bitstamp.get_balance()
-        for coin in CURRENCIES:  # Iterating over coins to implement the strategy
-            coin_data = {'coin': coin, 'min_ask_price_ice': min_ask_price_ice[coin],
-                         'max_bid_price_bitstamp': max_bid_price_bitstamp[coin],
-                         'currency_pair_id': currency_pair_id[coin], 'price_bitstamp': price_bitstamp[coin],
-                         'min_ask_price_usd': min_ask_price_usd[coin], 'balance_bitstamp': balance_bitstamp[coin]}
-            print('Starting strategy for ' + coin.upper())
-            logger.info(_format_log(coin_data, "INFO"))
-            coin_summary = strategy(coin, coin_data, bitstamp, ice, logger)
+    exchange_rate = currency_exchange_rate()  # getting currency exchange rate from forex.1forge.com
+    min_ask_price_usd = currency_conversion(exchange_rate, min_ask_price_ice)   # converting min ask price from
+    balance_bitstamp = bitstamp.get_balance()                                   # COIN/ZAR TO COIN/USD'
+    for coin in CURRENCIES:  # Iterating over coins to implement the strategy
+        coin_data = {'coin': coin, 'min_ask_price_ice': min_ask_price_ice[coin],
+                     'max_bid_price_bitstamp': max_bid_price_bitstamp[coin],
+                     'currency_pair_id': currency_pair_id[coin], 'price_bitstamp': price_bitstamp[coin],
+                     'min_ask_price_usd': min_ask_price_usd[coin], 'balance_bitstamp': balance_bitstamp[coin]}
+        print('Starting strategy for ' + coin.upper())
+        logger.info(_format_log(coin_data, "INFO"))
+        coin_summary = strategy(coin, coin_data, bitstamp, ice, logger)
 
-            bot_summary.append(coin_summary) # append summary to store in csv
+        bot_summary.append(coin_summary) # append summary to store in csv
+        print(bot_summary)
+        summary_into_file(bot_summary)    # append summary to email
 
-            summary_into_file(bot_summary)    # append summary to email
-
-            if coin_summary['error_msg'] == '':  # email only successful trades
-                email_summary.append(coin_summary)
-                # create html table storing summary
-        if len(email_summary) > 0:
-            htmlcontent.append(createHTMLtable('Summary of successful orders', EMAIL_HEADING, email_summary))
-            email_sub = 'Trading Bot Report'
-            email_body_text = 'Hi All,\n\nPFB the summary of orders:'
-            email_body = htmlcontent
-            email_text_end = '\n\nRegards\nTrading Bot'
-            sendEmail(email_sub, email_body_text, email_body, email_text_end)
-    except Exception as e:
-        logger.info(_format_log(e, "ERROR"))
+        if coin_summary['error_msg'] == '':  # email only successful trades
+            email_summary.append(coin_summary)
+            # create html table storing summary
+    if len(email_summary) > 0:
+        htmlcontent.append(createHTMLtable('Summary of successful orders', EMAIL_HEADING, email_summary))
+        email_sub = 'Trading Bot Report'
+        email_body_text = 'Hi All,\n\nPFB the summary of orders:'
+        email_body = htmlcontent
+        email_text_end = '\n\nRegards\nTrading Bot'
+        sendEmail(email_sub, email_body_text, email_body, email_text_end)
+    # except Exception as e:
+    #     logger.info(_format_log(e, "ERROR"))
 
 
 main()

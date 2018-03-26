@@ -2,15 +2,15 @@
 # BITSTAMP account keys
 
 
-Bitstamp_key = ''              # public key
-Bitstamp_secret = ''            # private key
-Bitstamp_client_id = ''                                # customer ID
+Bitstamp_key = 'WtoXTeix4LBUQkJAkeilYowmMUbfVK4r'              # public key
+Bitstamp_secret = 'lPu2EMyoV7gpKsuy1fRnxT1sAkfJVSS'            # private key
+Bitstamp_client_id = 'gugo5564'                                # customer ID
 
 
 # ICE3X account keys
 
-Ice_key = ''                    # public key
-Ice_secret = ''                 # private key
+Ice_key = 'IYBV1EGYESOGEHACTSKQ0ERQIMEJ0DQBGEDPCTTSARDLWNRIEFVVFLOO5TDGAXHY'                    # public key
+Ice_secret = 'cyv4pnqqxvqhdp6minydzjpsdgcnlxuieckgi8pilkfnuxgsbuk89lbwq6s1alpe'                 # private key
 
 EMAIL_FROM = ''                 # Email_id from which you want send email only GOOGLE account
 EMAIL_PASSWORD = ''             # GOOGLE account password
