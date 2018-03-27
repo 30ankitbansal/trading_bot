@@ -54,6 +54,7 @@ class Bitstamp(object):
             return max_bid_price_bitstamp, price_bitstamp
         except Exception as e:
             self.logger.info(self._format_log(e, "ERROR"))
+            return {}, {}
 
     def max_bid_amount(self, coin):     # return max bid order amount from order book
         try:
@@ -67,6 +68,7 @@ class Bitstamp(object):
             return MaxBidAmount
         except Exception as e:
             self.logger.info(self._format_log(e, "ERROR"))
+            return {}
 
     def send_bets(self, **params):          # place order
         if self.key and self.secret:
@@ -87,6 +89,7 @@ class Bitstamp(object):
                 return response
             except Exception as e:
                 self.logger.info(self._format_log(e, "ERROR"))
+                return {}
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 
@@ -112,6 +115,7 @@ class Bitstamp(object):
                 return balance
             except Exception as e:
                 self.logger.info(self._format_log(e, "ERROR"))
+                return {}
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 

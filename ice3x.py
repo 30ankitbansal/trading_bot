@@ -48,9 +48,11 @@ class Ice3x(object):
                         min_ask_price_ice[currency_pair[0]] = data['min_ask']  # min ask price
                         currency_pair_id[currency_pair[0]] = data['pair_id']  # currency pair id for every coin will be
                 self.logger.info(self._format_log(result, 'INFO'))                                                    # used in buy order.
-                return min_ask_price_ice, currency_pair_id
         except Exception as e:
             self.logger.info(self._format_log(e, 'ERROR'))
+            min_ask_price_ice = {}
+            currency_pair_id = {}
+        return min_ask_price_ice, currency_pair_id
 
     def place_order(self, pair_id, amount, type, price):  # place a order
         if self.key and self.secret:
@@ -74,6 +76,7 @@ class Ice3x(object):
                 return response
             except Exception as e:
                 self.logger.info(self._format_log(e, 'ERROR'))
+                return {}
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
 

@@ -1,0 +1,5 @@
+coin,date,min_ask_price_ice,max_bid_price_bitstamp,balance_bitstamp,coin_amount,fund_buy_usd,fund_sell_usd,variance,currency_pair_id,price_bitstamp,min_ask_price_usd,max_bid_amount,coin_amount,response_buy,fund_buy_usd,ice_order_id,ice_transaction_id,response_sell,fund_sell_usd,bitstamp_order_id
+btc,2018-03-26 16:39:33.916090,8907.76190862398,8082.06,0.0,-,-,-,170445.91047632036,3,8089.05,8907.76190862398,-,-,-,-,-,-,-,-,-
+ltc,2018-03-26 16:39:33.916574,170.543398,147.51,0.00150481,-,-,-,132.63435585660108,6,147.67,170.543398,-,-,-,-,-,-,-,-,-
+eth,2018-03-26 16:39:33.916970,531.9411414,485.19,0.0,-,-,-,546.4173055506983,11,486.50,531.9411414,-,-,-,-,-,-,-,-,-
+bch,2018-03-26 16:39:33.917432,1045.54243142998,915.75,0.0,-,-,-,4211.51881412652,15,915.27,1045.54243142998,-,-,-,-,-,-,-,-,-
