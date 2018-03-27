@@ -85,7 +85,6 @@ class Bitstamp(object):
                 r = requests.post(url, data=params)     # placing order using post
                 response = json.loads(r.text)
                 self.logger.info(self._format_log(response, "INFO"))
-                print(response)
                 return response
             except Exception as e:
                 self.logger.info(self._format_log(e, "ERROR"))
