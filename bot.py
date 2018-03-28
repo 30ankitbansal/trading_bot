@@ -188,18 +188,31 @@ def strategy(coin, coin_data, bitstamp, ice, logger):  # coin, (min_ask, max_bid
     return coin_data
 
 
+def read_csv():
+    len_csv = 0
+    try:
+        with open('trade_record.csv', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            len_csv = len(list(reader))
+            for row in reader:
+                # print(row)
+                print(len(list(reader)))
+    except:
+        len_csv = 0
+    return len_csv
+
+
 def summary_into_file(bot_summary):  # append summary to trade_report.csv file
-    record_fl = open('trade_record.csv', 'a+')       # open csv file in append mode
-    csv_rows = csv.reader(record_fl)
-    file_writer = csv.writer(record_fl, delimiter=',')
-    if len(list(csv_rows)) == 0:
-        file_writer.writerows(FILE_HEADING)
-    for coin in bot_summary:
-        row = []
-        for heading in FILE_HEADING:
-            row.append(coin.get(heading, '-'))
-        file_writer.writerow(row)       # appending trade summary for every coin success and failure both
-    record_fl.close()
+    len_csv = read_csv()
+    with open('trade_record.csv', 'a+') as record_fl:  # open csv file in append mode
+        file_writer = csv.writer(record_fl, delimiter=',')
+        if len_csv == 0:
+            file_writer.writerow(FILE_HEADING)
+        for coin in bot_summary:
+            row = []
+            for heading in FILE_HEADING:
+                row.append(coin.get(heading, '-'))
+            file_writer.writerow(row)  # appending trade summary for every coin success and failure both
 
 
 def main():
