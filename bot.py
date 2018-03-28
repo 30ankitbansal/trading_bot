@@ -50,9 +50,10 @@ def currency_exchange_rate():  # currency exchange rate from https://1forge.com/
 
 
 def currency_conversion(rate, price_zar):  # change min ask price of ice from Zar to Usd
+    price_usd = {}
     for coin in CURRENCIES:
-        price_zar[coin] = float(price_zar[coin]) / float(rate)
-    return price_zar
+        price_usd[coin] = float(price_zar[coin]) / float(rate)
+    return price_usd
 
 
 def createHTMLtable(table_heading, heading, data):  # create HTML table for email
@@ -221,6 +222,8 @@ def main():
 
             exchange_rate = currency_exchange_rate()                                    # getting currency exchange rate from forex.1forge.com
             min_ask_price_usd = currency_conversion(exchange_rate, min_ask_price_ice)   # converting min ask price from COIN/ZAR TO COIN/USD'
+            print(min_ask_price_usd, 'USD')
+            print(min_ask_price_ice, 'zar')
             for coin in CURRENCIES:                                                     # Iterating over coins to implement the strategy
                 coin_data = {'coin': coin, 'min_ask_price_ice': min_ask_price_ice[coin],
                              'max_bid_price_bitstamp': max_bid_price_bitstamp[coin],
