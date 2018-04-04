@@ -59,6 +59,7 @@ class Ice3x(object):
             try:
                 success = False
                 count = 0
+                response = ''
                 while not success and count < 5:
                     count += 1
                     nonce = str(int(time.time()) * 1e6)
@@ -82,16 +83,14 @@ class Ice3x(object):
 
                     r = requests.post(self.BASE_URL + uri, data=post_data, headers=headers)  # placing order on ice3x exchange
 
-                    # print(r.text)
                     response = json.loads(r.text)
-                    # print(response)
 
                     if response.get('errors') == 'false' or response.get('errors') == False:
                         success = True
-                    else:
                         self.logger.info(self._format_log(response, 'INFO'))
+                    else:
+                        self.logger.info(self._format_log(response, 'ERROR'))
                         time.sleep(5)
-                self.logger.info(self._format_log(response, 'INFO'))
                 return response
             except Exception as e:
                 self.logger.info(self._format_log(e, 'ERROR'))
