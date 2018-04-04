@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fa0bd70-ee13-4829-ac82-bac22e6f20de" name="Default" comment="final" />
+    <list default="true" id="8fa0bd70-ee13-4829-ac82-bac22e6f20de" name="Default" comment="final">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ice3x.py" afterPath="$PROJECT_DIR$/ice3x.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,15 +16,15 @@
       <file leaf-file-name="bot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="220" column="8" lean-forward="true" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+            <state relative-caret-position="198">
+              <caret line="225" column="31" lean-forward="true" selection-start-line="225" selection-start-column="31" selection-end-line="225" selection-end-column="31" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#2196#2842#0" expanded="false" />
                 <element signature="e#3772#3910#0" expanded="false" />
                 <element signature="e#4082#8968#0" expanded="false" />
                 <element signature="e#9297#9785#0" expanded="false" />
-                <element signature="e#10300#10423#0" expanded="false" />
+                <element signature="e#10299#10422#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -31,7 +33,7 @@
       <file leaf-file-name="bitstamp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitstamp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
+            <state relative-caret-position="878">
               <caret line="84" column="50" lean-forward="false" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="50" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
@@ -43,8 +45,8 @@
       <file leaf-file-name="ice3x.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ice3x.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="81" column="34" lean-forward="true" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+            <state relative-caret-position="396">
+              <caret line="83" column="24" lean-forward="false" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -104,8 +106,8 @@
       <find>print</find>
       <find>+</find>
       <find />
-      <find>urlencode</find>
       <find>read_csv</find>
+      <find>urlencode</find>
     </findStrings>
     <replaceStrings>
       <replace>self.BASE_URL</replace>
@@ -363,7 +365,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44479004" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20684293" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -449,7 +451,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10300#10423#0" expanded="false" />
+            <element signature="e#10299#10422#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -500,7 +502,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10300#10423#0" expanded="false" />
+            <element signature="e#10299#10422#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -552,7 +554,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10300#10423#0" expanded="false" />
+            <element signature="e#10299#10422#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -606,7 +608,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10300#10423#0" expanded="false" />
+            <element signature="e#10299#10422#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -650,7 +652,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10300#10423#0" expanded="false" />
+            <element signature="e#10299#10422#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -693,7 +695,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10300#10423#0" expanded="false" />
+            <element signature="e#10299#10422#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -728,7 +730,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10300#10423#0" expanded="false" />
+            <element signature="e#10299#10422#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -763,16 +765,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xyz.py" />
-    <entry file="file://$PROJECT_DIR$/bitstamp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="84" column="50" lean-forward="false" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="50" />
-          <folding>
-            <element signature="e#24#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -783,23 +775,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="220" column="8" lean-forward="true" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
+        <state relative-caret-position="198">
+          <caret line="225" column="31" lean-forward="true" selection-start-line="225" selection-start-column="31" selection-end-line="225" selection-end-column="31" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2196#2842#0" expanded="false" />
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10300#10423#0" expanded="false" />
+            <element signature="e#10299#10422#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitstamp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="878">
+          <caret line="84" column="50" lean-forward="false" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="50" />
+          <folding>
+            <element signature="e#24#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ice3x.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="81" column="34" lean-forward="true" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+        <state relative-caret-position="396">
+          <caret line="83" column="24" lean-forward="false" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

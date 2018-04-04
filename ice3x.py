@@ -57,26 +57,38 @@ class Ice3x(object):
     def place_order(self, pair_id, amount, type, price):  # place a order
         if self.key and self.secret:
             try:
-                nonce = str(int(time.time()) * 1e6)
-                uri = 'order/new'  # Api_method/api_action
-                post_data = {'nonce': nonce,
-                             'pair_id': pair_id,  # Currency pair id
-                             'amount': amount,  # The volume of transactions (amount)
-                             'type': type,  # Transaction type (type) – buy / sell
-                             'price': price  # The price of the buy / sell
-                             }
-                str_to_sign = str(urlencode(post_data))  # encoding post data for signature
-                # str_to_sign = 'nonce=' + nonce + '&amp;type=sell&amp;pair_id=3&amp;price=1652.00&amp;amount=1.00150481'
-                signature = hmac.new(self.secret.encode('utf-8'), msg=str_to_sign.encode('utf-8'),
-                                     digestmod=hashlib.sha512).hexdigest()
-                headers = {'Content-Type': 'application/x-www-form-urlencoded',
-                           'Key': self.key,
-                           'Sign': signature}
-                r = requests.post(self.BASE_URL + uri, data=post_data,
-                                  headers=headers)  # placing order on ice3x exchange
-                print(r.text)
-                response = json.loads(r.text)
-                print(response)
+                success = False
+                count = 0
+                while not success and count < 5:
+                    nonce = str(int(time.time()) * 1e6)
+                    uri = 'order/new'  # Api_method/api_action
+                    post_data = {'nonce': nonce,
+                                 'pair_id': pair_id,  # Currency pair id
+                                 'amount': amount,  # The volume of transactions (amount)
+                                 'type': type,  # Transaction type (type) – buy / sell
+                                 'price': price  # The price of the buy / sell
+                                 }
+                    str_to_sign = str(urlencode(post_data))  # encoding post data for signature
+
+                    signature = hmac.new(self.secret.encode('utf-8'), msg=str_to_sign.encode('utf-8'),
+                                         digestmod=hashlib.sha512).hexdigest()
+
+                    headers = {'Content-Type': 'application/x-www-form-urlencoded',
+                               'Key': self.key,
+                               'Sign': signature}
+                    log_msg = 'Trying ' + str(count) + ' time'
+                    self.logger.info(self._format_log(log_msg, 'INFO'))
+
+                    r = requests.post(self.BASE_URL + uri, data=post_data, headers=headers)  # placing order on ice3x exchange
+
+                    # print(r.text)
+                    response = json.loads(r.text)
+                    # print(response)
+
+                    if response.get('errors') == 'false' or response.get('errors') == False:
+                        success = True
+                    else:
+                        self.logger.info(self._format_log(response, 'INFO'))
                 self.logger.info(self._format_log(response, 'INFO'))
                 return response
             except Exception as e:
