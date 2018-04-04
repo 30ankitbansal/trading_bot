@@ -67,7 +67,7 @@ class Ice3x(object):
                              }
                 str_to_sign = str(urlencode(post_data))  # encoding post data for signature
                 signature = hmac.new(self.secret.encode('utf-8'), msg=str_to_sign.encode('utf-8'),
-                                     digestmod=hashlib.sha512).hexdigest()
+                                     digestmod=hashlib.sha512).hexdigest().upper()
                 headers = {'Content-Type': 'application/json',
                            'Key': self.key,
                            'Sign': signature}
