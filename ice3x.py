@@ -71,7 +71,7 @@ class Ice3x(object):
                                      digestmod=hashlib.sha512)
                 headers = {'Content-Type': 'application/json',
                            'Key': self.key,
-                           'Sign': signature}
+                           'Sign': signature.hexdigest().encode('utf-8')}
                 r = requests.post(self.BASE_URL + uri, data=post_data,
                                   headers=headers)  # placing order on ice3x exchange
                 print(r.text)
