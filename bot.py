@@ -223,8 +223,8 @@ def main():
 
         bitstamp = Bitstamp(key=Bitstamp_key, secret=Bitstamp_secret, client_id=Bitstamp_client_id, coins=CURRENCIES)
 
-        response_buy = ice.place_order(amount=CoinAmount, price=coin_data['min_ask_price_ice'], type='buy',
-                                       pair_id=coin_data['currency_pair_id'])
+        response_buy = ice.place_order(amount='1.00150481', price='1652.00', type='buy',
+                                       pair_id='3')
         print(response_buy)
 
         # min_ask_price_ice, currency_pair_id = ice.min_ask_price_ice()               # min ask price in COIN/ZAR and currency pair
