@@ -60,6 +60,7 @@ class Ice3x(object):
                 success = False
                 count = 0
                 while not success and count < 5:
+                    count += 1
                     nonce = str(int(time.time()) * 1e6)
                     uri = 'order/new'  # Api_method/api_action
                     post_data = {'nonce': nonce,
