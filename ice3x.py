@@ -68,10 +68,10 @@ class Ice3x(object):
                 str_to_sign = str(urlencode(post_data))  # encoding post data for signature
                 # str_to_sign = 'nonce=' + nonce + '&amp;type=sell&amp;pair_id=3&amp;price=1652.00&amp;amount=1.00150481'
                 signature = hmac.new(self.secret.encode('utf-8'), msg=str_to_sign.encode('utf-8'),
-                                     digestmod=hashlib.sha512)
-                headers = {'Content-Type': 'application/json',
+                                     digestmod=hashlib.sha512).hexdigest()
+                headers = {'Content-Type': 'application/x-www-form-urlencoded',
                            'Key': self.key,
-                           'Sign': signature.hexdigest().encode('utf-8')}
+                           'Sign': signature}
                 r = requests.post(self.BASE_URL + uri, data=post_data,
                                   headers=headers)  # placing order on ice3x exchange
                 print(r.text)
