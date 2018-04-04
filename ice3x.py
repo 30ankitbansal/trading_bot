@@ -71,7 +71,9 @@ class Ice3x(object):
                 headers = {'Key': self.key,
                            'Sign': signature}
                 r = requests.post(self.BASE_URL + uri, data=post_data, headers=headers)  # placing order on ice3x exchange
+                print(r.text)
                 response = json.loads(r.text)
+                print(response)
                 self.logger.info(self._format_log(response, 'INFO'))
                 return response
             except Exception as e:
