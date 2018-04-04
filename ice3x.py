@@ -90,6 +90,7 @@ class Ice3x(object):
                         success = True
                     else:
                         self.logger.info(self._format_log(response, 'INFO'))
+                        time.sleep(5)
                 self.logger.info(self._format_log(response, 'INFO'))
                 return response
             except Exception as e:
