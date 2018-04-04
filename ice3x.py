@@ -37,17 +37,17 @@ class Ice3x(object):
         currency_pair_id = {}
         try:
             response = requests.get(self.BASE_URL + 'stats/marketdepthbtcav').text  # This method provides info about
-                                                            # currency pair, for a certain period of time (24h by default):
+            # currency pair, for a certain period of time (24h by default):
             # Note: Value of params last_price, min_ask and max_bid don’t depend on chosen period of time
             # (date_from, date_to) and always provides info for current time.
             result = json.loads(response)
             if result['errors'] == 'false' or result['errors'] == False:  # for successful response getting min ask
-                for data in result['response']['entities']:                 # price for every coin
+                for data in result['response']['entities']:  # price for every coin
                     currency_pair = str(data['pair_name']).split('/')
                     if currency_pair[1] == 'zar' and str(currency_pair[0]) in self.coins:
                         min_ask_price_ice[currency_pair[0]] = data['min_ask']  # min ask price
                         currency_pair_id[currency_pair[0]] = data['pair_id']  # currency pair id for every coin will be
-                self.logger.info(self._format_log(result, 'INFO'))                                                    # used in buy order.
+                self.logger.info(self._format_log(result, 'INFO'))  # used in buy order.
         except Exception as e:
             self.logger.info(self._format_log(e, 'ERROR'))
             min_ask_price_ice = {}
@@ -68,9 +68,11 @@ class Ice3x(object):
                 str_to_sign = str(urlencode(post_data))  # encoding post data for signature
                 signature = hmac.new(self.secret.encode('utf-8'), msg=str_to_sign.encode('utf-8'),
                                      digestmod=hashlib.sha512).hexdigest()
-                headers = {'Key': self.key,
+                headers = {'Content-Type': 'application/x-www-form-urlencoded',
+                           'Key': self.key,
                            'Sign': signature}
-                r = requests.post(self.BASE_URL + uri, data=post_data, headers=headers)  # placing order on ice3x exchange
+                r = requests.post(self.BASE_URL + uri, data=post_data,
+                                  headers=headers)  # placing order on ice3x exchange
                 print(r.text)
                 response = json.loads(r.text)
                 print(response)
@@ -81,4 +83,3 @@ class Ice3x(object):
                 return {}
         else:
             return "KEY AND SECRET NEEDED FOR BETTING"
-
