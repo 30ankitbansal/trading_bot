@@ -1,3 +1,4 @@
 ERROR 2018-04-04 20:57:00.879513: Expecting value: line 1 column 1 (char 0)
 ERROR 2018-04-04 22:28:19.091059: Expecting value: line 1 column 1 (char 0)
 ERROR 2018-04-04 22:43:40.813935: Expecting value: line 1 column 1 (char 0)
+ERROR 2018-04-04 22:50:08.338998: Unicode-objects must be encoded before hashing

@@ -223,7 +223,7 @@ def main():
 
         bitstamp = Bitstamp(key=Bitstamp_key, secret=Bitstamp_secret, client_id=Bitstamp_client_id, coins=CURRENCIES)
 
-        response_buy = ice.place_order(amount='1.00150481', price='1652.00', type='buy',
+        response_buy = ice.place_order(amount='1.00150481', price='1652.00', type='sell',
                                        pair_id='3')
         print(response_buy)
 
