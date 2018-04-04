@@ -43,8 +43,8 @@
       <file leaf-file-name="ice3x.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ice3x.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+            <state relative-caret-position="182">
+              <caret line="70" column="77" lean-forward="false" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="77" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -132,8 +132,8 @@
         <option value="$PROJECT_DIR$/bitstamp.py" />
         <option value="$PROJECT_DIR$/xyz.py" />
         <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/ice3x.py" />
         <option value="$PROJECT_DIR$/bot.py" />
+        <option value="$PROJECT_DIR$/ice3x.py" />
       </list>
     </option>
   </component>
@@ -797,8 +797,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ice3x.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        <state relative-caret-position="182">
+          <caret line="70" column="77" lean-forward="false" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="77" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
