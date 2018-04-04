@@ -65,10 +65,10 @@ class Ice3x(object):
                              'type': type,  # Transaction type (type) – buy / sell
                              'price': price  # The price of the buy / sell
                              }
-                # str_to_sign = str(urlencode(post_data))  # encoding post data for signature
-                str_to_sign = 'nonce=' + nonce + '&amp;type=sell&amp;pair_id=3&amp;price=1652.00&amp;amount=1.00150481'
+                str_to_sign = str(urlencode(post_data))  # encoding post data for signature
+                # str_to_sign = 'nonce=' + nonce + '&amp;type=sell&amp;pair_id=3&amp;price=1652.00&amp;amount=1.00150481'
                 signature = hmac.new(self.secret.encode('utf-8'), msg=str_to_sign.encode('utf-8'),
-                                     digestmod=hashlib.sha512).hexdigest()
+                                     digestmod=hashlib.sha512)
                 headers = {'Content-Type': 'application/json',
                            'Key': self.key,
                            'Sign': signature}

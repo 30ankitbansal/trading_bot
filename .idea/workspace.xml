@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8fa0bd70-ee13-4829-ac82-bac22e6f20de" name="Default" comment="final">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ice3x.py" afterPath="$PROJECT_DIR$/ice3x.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/ice3x.log" afterPath="$PROJECT_DIR$/logs/ice3x.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +24,7 @@
                 <element signature="e#3772#3910#0" expanded="false" />
                 <element signature="e#4082#8968#0" expanded="false" />
                 <element signature="e#9297#9785#0" expanded="false" />
-                <element signature="e#10299#10422#0" expanded="false" />
+                <element signature="e#10300#10423#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -46,11 +45,9 @@
       <file leaf-file-name="ice3x.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ice3x.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="68" column="64" lean-forward="false" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-734">
+              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,6 +105,7 @@
       <find>+</find>
       <find />
       <find>read_csv</find>
+      <find>urlencode</find>
     </findStrings>
     <replaceStrings>
       <replace>self.BASE_URL</replace>
@@ -365,7 +363,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44479004" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44479004" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -418,9 +416,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
           <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -451,7 +447,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10299#10422#0" expanded="false" />
+            <element signature="e#10300#10423#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -470,9 +466,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
           <caret line="71" column="45" lean-forward="true" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -502,7 +496,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10299#10422#0" expanded="false" />
+            <element signature="e#10300#10423#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -521,9 +515,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="49" column="138" lean-forward="false" selection-start-line="49" selection-start-column="138" selection-end-line="49" selection-end-column="138" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -554,7 +546,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10299#10422#0" expanded="false" />
+            <element signature="e#10300#10423#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -574,9 +566,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
           <caret line="72" column="16" lean-forward="false" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -608,7 +598,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10299#10422#0" expanded="false" />
+            <element signature="e#10300#10423#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -635,9 +625,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="46" column="58" lean-forward="false" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -652,7 +640,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10299#10422#0" expanded="false" />
+            <element signature="e#10300#10423#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -679,9 +667,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -695,7 +681,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10299#10422#0" expanded="false" />
+            <element signature="e#10300#10423#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,9 +700,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -730,7 +714,7 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10299#10422#0" expanded="false" />
+            <element signature="e#10300#10423#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -793,18 +777,16 @@
             <element signature="e#3772#3910#0" expanded="false" />
             <element signature="e#4082#8968#0" expanded="false" />
             <element signature="e#9297#9785#0" expanded="false" />
-            <element signature="e#10299#10422#0" expanded="false" />
+            <element signature="e#10300#10423#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ice3x.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="68" column="64" lean-forward="false" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-734">
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
